@@ -26,7 +26,11 @@ export const CountryFilter = (props: CountryFilterProps) => {
     fontSize,
     onBackgroundTextColor
   } = useTheme()
-
+  const { translation } = useContext()
+  CountryFilter.defaultProps = {
+    autoFocus: false,
+    placeholder: translation == 'zho' ? "输入国家/地区名" : "Enter country/region name"
+  }
   return (
     <TextInput
       testID="text-input-country-filter"
@@ -41,9 +45,5 @@ export const CountryFilter = (props: CountryFilterProps) => {
   )
 }
 
-const { translation } = useContext()
 
-CountryFilter.defaultProps = {
-  autoFocus: false,
-  placeholder: translation == 'zho' ? "输入国家/地区名" : "Enter country/region name"
-}
+
