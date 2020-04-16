@@ -1,6 +1,7 @@
 import React from 'react'
 import { TextInput, StyleSheet, TextInputProps, Platform } from 'react-native'
 import { useTheme } from './CountryTheme'
+import I18n from '../../../src/containers/locales/i18n'
 
 const styles = StyleSheet.create({
   input: {
@@ -41,5 +42,5 @@ export const CountryFilter = (props: CountryFilterProps) => {
 
 CountryFilter.defaultProps = {
   autoFocus: false,
-  placeholder: 'Enter country name'
+  placeholder: I18n.t('filter_placeholder')
 }
